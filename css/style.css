@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: url("../img/bg.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.4);
+    /* box-shadow: 1px 1px 5px rgb(0, 0, 0); */
+    /* box-shadow: 1px 1px 10px red; */
+    border-radius: 5px;
+    backdrop-filter: blur(2px);
+    color: white;
+    padding: 10px 20px 10px 20px;
+    /* overflow: hidden; */
+}
+
+.container::before{
+    content: '';
+    position: absolute;
+    background: transparent;
+    height: 220px;
+    width: 320px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 4px black;
+
+    z-index: -1;
+}
+
+.container input{
+    padding: 10px 4px;
+    width: 280px;
+    background: transparent;
+    outline: none;
+    border: 2px solid white;
+    color: white;
+    font-size: 16px;
+    border-radius: 0 20px 20px 20px;
+    transition: all .5s;
+}
+
+#user{
+    margin-bottom: 20px;
+}
+
+.container input::placeholder{
+    color: white;
+}
+
+#loginBtn{
+    padding: 5px 17px;
+    color: white;
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 0 20px 20px 20px;
+    margin-top: 10px;
+    font-size: 20px;
+    transition: all .5s;
+}
+
+.container h1{
+    margin-bottom: 10px;
+}
+
+
+.container input:focus {
+    transform: scale(1.1)
+}
+
+
+.loadingContainer{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(.15rem);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.load{
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    background: transparent;
+    border: 3px solid white;
+    border-radius: 50%;
+    border-left: none;
+    animation: anim 0.9s linear infinite;
+}
+
+.loadingText{
+    color: white;
+    position: absolute;
+    animation: anim2 0.9s alternate-reverse linear infinite;
+}
+
+
+@keyframes anim {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes anim2 {
+    from{
+        transform: scale(1.1, 1.1);
+    }
+    to{
+        transform: scale(0.9, 0.9);
+    }
+}
